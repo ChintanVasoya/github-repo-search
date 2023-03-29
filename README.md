@@ -1,6 +1,18 @@
+# Project Description
+
+Github repositories search application (Angular) using by github rest api.
+single page applicatoin for search git repositories of particular user and then search and filter in that data
+
+
 # RepoSearch
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1. 
+
+#### current version
+
+node  16.16.0
+Angular: 15.2.4
+npm 8.11.0
 
 ## Development server
 
