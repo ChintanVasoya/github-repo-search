@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+
+.ng-select.ng-select-single .ng-select-container {
+    height: 40px !important;
+    width: 100% !important;
+}
+
+.ng-select .ng-select-container {
+    color: #333 !important;
+    background-color: #fff !important;
+    border-radius: 4px !important;
+    border: 1px solid #ccc !important;
+    min-height: 30px !important;
+    align-items: center !important;
+}
+.ng-select {
+    position: relative !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    font-size: 14px !important;
+    padding-bottom: 0px !important;
+}
+.ng-select .ng-select-container {
+    cursor: default !important;
+    display: flex !important;
+    outline: none !important;
+    overflow: hidden !important;
+    position: relative !important;
+    width: 100% !important;
+}

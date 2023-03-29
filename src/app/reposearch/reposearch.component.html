@@ -1,0 +1,82 @@
+<div class="header">
+<div style="background-color:rgb(243, 61, 61)">
+    <h1 style="text-align: center;">  Git Repository Search </h1>
+ </div>
+
+ <form [formGroup]="userForm" (ngSubmit)="searchGitRepo()">
+    <div class="usersearch">
+    <div class="input-group mb-3" style="padding: 0 30px 0 0px;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Enter Username @</span>
+        </div>
+        <input type="text" formControlName="username" class="form-control" placeholder="Username"
+            aria-label="Username" aria-describedby="basic-addon1">
+           
+            
+    </div>
+    <span style="color:red;font-size: 12px;" *ngIf="userForm.controls['username'].errors && isSubmitted">
+        Please enter any Username
+    </span>
+    
+    <button type="submit" style="margin: 0px 40px 15px 0px" class="btn btn-success">Search Repositories</button>
+</div>
+</form>
+
+ <div class="col-md-12" style="display: flex;">
+    <div class="col-md-8" class="input-group ">
+        <input type="text"  class="form-control" [(ngModel)]="searchText" placeholder="Search keywords"
+            aria-label="Username" aria-describedby="basic-addon1" [ngModelOptions]="{standalone: true}">
+            <div class="input-group-append" style="    height: 85%;">
+                <button class="btn btn-success" type="button" id="button-addon2" (click)="search()">Search</button>
+              </div>
+    </div>
+    <div class="col-md-4" style="display: flex;">
+        <div class="col-md-2" class="input-group" style="margin: 0px 5px 5px 0px">
+            <ng-select style="width: 100%;" [items]="type_ddl" 
+                      bindLabel="name" 
+                      bindValue="value"
+                      placeholder="Type"
+                      (change)="search()"
+                      [(ngModel)]="searchType">
+            </ng-select>
+        </div>
+        <div class="col-md-2" class="input-group"  style="margin: 0px 5px 5px 0px">
+            <ng-select style="width: 100%;" [items]="languages_ddl" 
+           bindLabel="name" 
+           bindValue="value"
+           placeholder="language: All"
+           (change)="search()"
+           [(ngModel)]="searchlanguage">
+</ng-select>
+        </div>
+        <!-- <div class="col-md-2" class="input-group"  style="margin: 0px 5px 5px 0px">
+            <button type="button" class="btn btn-primary" >submit</button>
+        </div>
+        </div> -->
+</div>
+
+</div>
+</div>
+
+<div *ngIf="isDisplay == true">
+    <div>
+        <div class="col-md-12" *ngFor="let repository of repositories; let i=index">
+            <div style="border: inset;">
+                <div class="card-body text-center" style="padding: 0 0 0 0;">
+                    <h4 >{{repository.name}}</h4>
+                    <p >{{repository.description}}</p>
+                </div>
+                <div >
+                    <p ><strong>Created on: <span >{{repository.created_at | date}}</span></strong></p>
+                    <a href="{{repository.html_url}}" target="_blank" >View repository <i
+                        ></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="repositories.length == 0 && isSubmitted == true">
+              <h1 style="text-align: center;">{{repos_username}} doesn’t have any repositories that match.</h1>
+    </div>
+
+</div>
