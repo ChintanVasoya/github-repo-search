@@ -19,7 +19,6 @@
     "@angular/platform-browser-dynamic": "^15.2.4",
     "@angular/router": "^15.2.4",
     "@ng-select/ng-select": "^10.0.4",
-    "mdb-angular-ui-kit-free": "file:zips/MDB5-ANGULAR-UI-KIT-Free",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
